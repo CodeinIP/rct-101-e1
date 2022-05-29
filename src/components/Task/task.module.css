@@ -1,3 +1,45 @@
 .task {
-  /* Sample  */
+  /* border: 1px solid red; */
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  background-color: rgb(240, 143, 148);
+  margin:5px;
+  border-radius: 15px;
+  padding:5px;
 }
+.untask{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  background-color: rgb(182, 175, 175);
+  margin:5px;
+  border-radius: 15px;
+  padding:5px;
+  text-decoration: line-through;
+  color:rgb(155, 152, 152);
+}
+input[type="checkbox"]{
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+}
+.dltbtn{
+  opacity: 0.1;
+}
+.task:hover .dltbtn{
+  opacity:1;
+}
+.untask:hover .dltbtn{
+  opacity: 1;
+}
+

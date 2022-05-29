@@ -1,3 +1,26 @@
-.addTask {
-  /* Sample */
+.todoForm{
+  padding:10px;
+  background-color: rgb(233, 250, 200);
+}
+.addTaskInput{
+  height: 30px;
+  width: 200px;
+  border:none;
+  border-bottom:3px solid rgb(185, 170, 170);
+  margin:10px;
+  background-color: transparent;
+}
+.addbtn{
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: none;
+  font-size: 30px;
+  font-weight: bold;
+  color:grey;
+  background-color:rgb(238, 184, 164);
+}
+.addbtn:hover{
+  color:grey;
+  background-color:#131212;
 }

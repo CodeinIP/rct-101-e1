@@ -1,14 +1,34 @@
 import React from "react";
 import styles from "./task.module.css";
-
-const Task = () => {
+import Counter from "../Counter/Counter"
+import removeIcon from "../../assets/remove.svg"
+const Task = ({task,handleUpdateTask,handleRemoveTask}) => {
   // NOTE: do not delete `data-cy` key value pair
+const toogleTaskStatus = ()=>{
+  let toogledTask = {
+    ...task,
+    done: !task.done,
+  };
+  handleUpdateTask(toogledTask)
+}
+const updateCount = (newCount)=>{
+  if(newCount>0){
+    let updatedCountTask = {
+      ...task,
+      count:newCount,
+    };
+    handleUpdateTask(updatedCountTask)
+  }
+}
   return (
-    <li data-cy="task" className={styles.task}>
-      <input type="checkbox" data-cy="task-checkbox" />
-      <div data-cy="task-text"></div>
-      {/* Counter here */}
-      <button data-cy="task-remove-button"></button>
+    <li data-cy="task" className={task.done? styles.untask:styles.task}>
+      <input type="checkbox" data-cy="task-checkbox"  checked={task.done} onChange= {toogleTaskStatus} />
+      <div data-cy="task-text">{task.text}</div>
+      <Counter count = {task.count} updateCount={updateCount}/>
+      <button data-cy="task-remove-button" className={styles.dltbtn} onClick = {()=> handleRemoveTask(task.id)}>
+      
+      <img src={removeIcon} alt="Remove" />
+      </button>
     </li>
   );
 };
